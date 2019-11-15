@@ -27,7 +27,7 @@
             android:value="true" />
         <meta-data
             android:name="xposeddescription"
-            android:value="Use faceId unlock app which support fingerprint" />
+            android:value="Redirect all calls to FingerprintManager to BiometricPrompt" />
         <meta-data
             android:name="xposedminversion"
             android:value="30" />
