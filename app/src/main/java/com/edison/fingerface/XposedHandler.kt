@@ -11,7 +11,9 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage
 class XposedHandler : IXposedHookLoadPackage {
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        if (lpparam.processName != "android" && lpparam.processName != "com.android.systemui") {
+        if (lpparam.processName != "android" &&
+            lpparam.packageName != "com.android.systemui" &&
+            lpparam.packageName != "com.android.settings") {
             hookFingerprintService(lpparam.classLoader)
             hookPackageManager(lpparam.classLoader)
         }
